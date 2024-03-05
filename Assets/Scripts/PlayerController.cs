@@ -7,11 +7,18 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody rb;
-    private float jumpForce = 50.0f;
+    private float jumpForce = 40.0f;
     private float movementDistance = 1.0f;
     private int playerPosition = 0;
 
     public bool isGrounded = true;
+
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();    
+    }
 
     void Start()
     {
@@ -20,17 +27,16 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        animator.SetBool("isJumping", true);
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); 
         isGrounded = false;
     }
 
     void MoveSideways(int direction)
     {
-        if (direction == -1 && playerPosition < 0)
-        {
-            return;
-        }
-        else if (direction == 1 && playerPosition > 0)
+        if (direction == -1 && playerPosition < 0 ||
+            direction == 1 && playerPosition > 0
+        )
         {
             return;
         }
@@ -64,6 +70,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            animator.SetBool("isJumping", false);
         }
     }
 }

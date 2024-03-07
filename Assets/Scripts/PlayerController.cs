@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody rb;
-    private float jumpForce = 40.0f;
-    private float movementDistance = 1.0f;
+    private float jumpForce = 60.0f;
+    private float movementDistance = 1.5f;
     private int playerPosition = 0;
 
     public bool isGrounded = true;
@@ -34,9 +34,7 @@ public class PlayerController : MonoBehaviour
 
     void MoveSideways(int direction)
     {
-        if (direction == -1 && playerPosition < 0 ||
-            direction == 1 && playerPosition > 0
-        )
+        if (direction == -1 && playerPosition == -1 || direction == 1 && playerPosition == 1)
         {
             return;
         }
@@ -71,6 +69,14 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             animator.SetBool("isJumping", false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("singleBox"))
+        {
+            Debug.Log("Game Over");
         }
     }
 }

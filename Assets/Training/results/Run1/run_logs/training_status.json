@@ -1,0 +1,29 @@
+{
+    "PlayerController": {
+        "checkpoints": [
+            {
+                "steps": 79817,
+                "file_path": "results\\Run1\\PlayerController\\PlayerController-79817.onnx",
+                "reward": 2.8361537616986494,
+                "creation_time": 1709888167.1179757,
+                "auxillary_file_paths": [
+                    "results\\Run1\\PlayerController\\PlayerController-79817.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 79817,
+            "file_path": "results\\Run1\\PlayerController.onnx",
+            "reward": 2.8361537616986494,
+            "creation_time": 1709888167.1179757,
+            "auxillary_file_paths": [
+                "results\\Run1\\PlayerController\\PlayerController-79817.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.1+cpu"
+    }
+}

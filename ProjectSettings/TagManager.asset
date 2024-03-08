@@ -8,6 +8,8 @@ TagManager:
   - Obstacle deleter
   - singleBox
   - doubleBox
+  - emptyBox
+  - Barrier
   layers:
   - Default
   - TransparentFX

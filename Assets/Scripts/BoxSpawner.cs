@@ -16,20 +16,25 @@ public class BoxSpawner : MonoBehaviour
     [SerializeField]
     private GameObject[] spawnObjects;
 
-    private string[] spawnPatters = { 
-        "s--", "--s",
-        "ss-", "-ss",
-        "sss",
-        "s-s",
-        "---",
-        "sd-", "-ds",
-        "s-d", "d-s",
-        "ssd", "dss",
-        "sdd", "dds",
-        "d-s", "-sd",
-        "d--", "--d",
-        "dd-", "-dd",
-        "d-d"
+    //private string[] spawnPatters = { 
+    //    "s--", "--s",
+    //    "ss-", "-ss",
+    //    "sss",
+    //    "s-s",
+    //    "---",
+    //    "sd-", "-ds",
+    //    "s-d", "d-s",
+    //    "ssd", "dss",
+    //    "sdd", "dds",
+    //    "d-s", "-sd",
+    //    "d--", "--d",
+    //    "dd-", "-dd",
+    //    "d-d"
+    //};
+
+    private string[] spawnPatterns =
+    {
+        "-s-"
     };
 
     private GameObject GetObstacleForPatternLetter(char letter)
@@ -78,7 +83,7 @@ public class BoxSpawner : MonoBehaviour
         if (Time.time > nextTimeToSpawn)
         {
             nextTimeToSpawn = Time.time + delay;
-            string pattern = spawnPatters[Random.Range(0, spawnPatters.Length)];
+            string pattern = spawnPatterns[Random.Range(0, spawnPatterns.Length)];
             GameObject left = SpawnObstacleRow(0, pattern);
             GameObject middle = SpawnObstacleRow(1, pattern);
             GameObject right = SpawnObstacleRow(2, pattern);

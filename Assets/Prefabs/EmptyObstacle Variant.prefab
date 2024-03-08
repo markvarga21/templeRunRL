@@ -60,10 +60,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: EmptyObstacle Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7871925514189330383, guid: 717b8740e9750de46bf8127d83a9c559, type: 3}
+      propertyPath: m_TagString
+      value: emptyBox
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 710696620798524965, guid: 717b8740e9750de46bf8127d83a9c559, type: 3}
     - {fileID: 199634781577790939, guid: 717b8740e9750de46bf8127d83a9c559, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7871925514189330383, guid: 717b8740e9750de46bf8127d83a9c559, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1401258519317077498}
   m_SourcePrefab: {fileID: 100100000, guid: 717b8740e9750de46bf8127d83a9c559, type: 3}
+--- !u!1 &4393552595096191749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7871925514189330383, guid: 717b8740e9750de46bf8127d83a9c559, type: 3}
+  m_PrefabInstance: {fileID: 5892883433945994442}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1401258519317077498
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393552595096191749}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
